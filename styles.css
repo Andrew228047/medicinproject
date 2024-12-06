@@ -1,0 +1,146 @@
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  header .nav-link {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  header .nav-link:hover {
+    color: #d4e2f0;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  #patient-details {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #patient-details h2 {
+    margin-top: 0;
+  }
+  
+  #patient-details p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  /* Загальні стилі */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Стилі для основного контейнера */
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовки секцій */
+.section-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 100%;
+  background-color: #3498db;
+  margin-right: 10px;
+}
+
+/* Список графіків */
+.schedule-list, .duty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.schedule-item, .duty-item {
+  padding: 15px;
+  background-color: #e3f2fd;
+  border-left: 5px solid #3498db;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.schedule-item:hover, .duty-item:hover {
+  background-color: #bbdefb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Роздільник між секціями */
+.divider {
+  margin: 30px 0;
+  border: none;
+  border-top: 2px dashed #bbb;
+}
+.patient-card {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.patient-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+.patient-content {
+  padding: 20px;
+}
+.patient-content p {
+  margin-bottom: 10px;
+}
+.patient-footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.btn-back {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+.btn-back:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інформація про пацієнта</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="patient-card">
+      <div id="patient-info">
+        <!-- Інформація про пацієнта завантажується тут -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const patients = JSON.parse(localStorage.getItem("patients")) || [];
+    const params = new URLSearchParams(window.location.search);
+    const patientId = Number(params.get("id"));
+    const patient = patients.find(p => p.id === patientId);
+
+    const patientInfo = document.getElementById("patient-info");
+
+    if (patient) {
+      patientInfo.innerHTML = `
+        <div class="patient-header">
+          <h2>${patient.name}</h2>
+        </div>
+        <div class="patient-content">
+          <p><strong>Вік:</strong> ${patient.age}</p>
+          <p><strong>Контакт:</strong> ${patient.contact}</p>
+          <p><strong>Останній візит:</strong> ${new Date(patient.lastVisit).toLocaleDateString("uk-UA")}</p>
+          <p><strong>Хвороба:</strong> ${patient.disease || "Інформація відсутня"}</p>
+        </div>
+        <div class="patient-footer">
+          <a href="index.html" class="btn-back">⬅️ Повернутися до списку</a>
+        </div>
+      `;
+    } else {
+      patientInfo.innerHTML = `
+        <div class="patient-header">
+          <h2>Пацієнта не знайдено</h2>
+        </div>
+        <div class="patient-content">
+          <p>Пацієнт з вказаним ID не існує в базі даних.</p>
+        </div>
+        <div class="patient-footer">
+          <a href="index.html" class="btn-back">⬅️ Повернутися до списку</a>
+        </div>
+      `;
+    }
+  </script>
+  <footer class="text-center bg-dark text-white py-3 fixed-bottom">
+    <p>© 2024 Санітарна частина. Всі права захищені.</p>
+</footer>
+</body>
+</html>
